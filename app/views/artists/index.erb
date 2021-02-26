@@ -8,8 +8,8 @@
 
     <body>
         <h1>List of Artist Names on Playlist: </h1>
-        <% @artists.each do |artist| %> 
+        <% @artists.each do |artist| %>
             <li><a href="/artists/<%= artist.slug %>"><%= artist.name %></a>
-        <% end %> 
+        <% end %>
     </body>
 </html>
