@@ -1,23 +1,23 @@
 <h1>Update Song</h1>
- 
+
 <h2>Edits for <%= @song.name %></h2>
- 
+
   <form action="/songs/<%= @song.slug %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Edit the Song Name:</label>
     <br>
     <input type="text" name="song[name]" value="<%= @song.name %>">
- 
+
     <br>
     <p>Select the existing artist or create a new one below.</p>
- 
- 
+
+
     <h3>Existing Artists</h3>
     <% @artists.each do |artist| %>
       <input type="radio" name="song[artist_id]" id="<%= artist.id %>" value="<%= artist.id %>" <%='checked' if @song.artist_id == artist.id %>><%= artist.name %></input><br>
     <% end %>
     <br>
- 
+
     <h3>Existing Genres</h3>
     <% @genres.each do |genre| %>
         <% binding.pry %>
@@ -30,6 +30,6 @@
     <br>
     <input type="text" name="artist[name]" id="Artist Name"></input>
     <br><br>
- 
+
     <input type="submit" value="Save">
   </form>
